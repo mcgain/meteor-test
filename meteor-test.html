@@ -1,0 +1,17 @@
+<head>
+  <title>meteor-test</title>
+</head>
+
+<body>
+  {{> listable}}
+</body>
+
+<template name="listable">
+  <h1>{{list_title}}</h1>
+  <div>
+    <table>
+    {{rows}}
+    </table>
+  </div>
+</template>
+
