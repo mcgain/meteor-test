@@ -8,20 +8,19 @@ if (Meteor.is_client) {
   Template.listable.rows = function() {
     var result = "";
     var rows = List.find({});
+    result = result + "<table>";
     rows.forEach(function(obj) {
       result = result + "<tr>";
       for (var prop in obj) {
         if (obj.hasOwnProperty(prop)) {
           result = result + "<td>" + obj[prop] + "</td>";
-          (prop + " = " + obj[prop]);
         }
       }
       result = result + "</tr>";
     });
+    result = result + "</table>";
     return result;
   }
-
-
 
 }
 if (Meteor.is_server) {
