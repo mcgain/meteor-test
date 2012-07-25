@@ -12,8 +12,10 @@ if (Meteor.is_client) {
     rows.forEach(function(obj) {
       result = result + "<tr>";
       for (var prop in obj) {
-        if (obj.hasOwnProperty(prop)) {
-          result = result + "<td>" + obj[prop] + "</td>";
+        if ((obj.hasOwnProperty(prop)) && (prop[0] !== "_")) {
+          if (prop[0] !== "_") {
+            result = result + "<td>" + obj[prop] + "</td>";
+          }
         }
       }
       result = result + "</tr>";
